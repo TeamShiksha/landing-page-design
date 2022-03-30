@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
+
+body {
+  font-family: "SF Pro Text", -apple-system, "Source Sans Pro",
+    BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-clip: content-box;
+}
+
+body > aside {
+  background: hsl(136, 62%, 58%);
+  background-clip: content-box;
+  user-select: none;
+  background: image-set(
+    url("https://frontend.army/assets/images/fa-logo.svg") 2x,
+    url("https://frontend.army/assets/images/fa-logo.svg") 1x
+  );
+}
+
+.button {
+  -webkit-transition: background 200ms;
+  -moz-transition: background 200ms;
+  transition: background 200ms;
+}
