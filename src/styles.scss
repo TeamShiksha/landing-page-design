@@ -1,29 +1,102 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
 //colors
-$fagreen: #50D673;
+$fagreen: #50d673;
+$fablue: #2d4884;
 
-html,body{
+html,
+body {
+  min-height: 100%;
+}
+
+@import "./generics.scss";
+
+html,
+body {
   height: 100%;
 }
 
 body {
-  font-family: 'SF Pro Text', -apple-system, 'Source Sans Pro', BlinkMacSystemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: "SF Pro Text", -apple-system, "Source Sans Pro",
+    BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background-clip: content-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   display: flex;
-  >aside{
+  > aside {
     width: 4em;
     background: $fagreen;
+    .logo-sm {
+      opacity: 50%;
+    }
   }
-  >main{
+  @media screen and (max-width: 640px) {
+    > aside {
+      display: none;
+    }
+  }
+  > main {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    header{
-      padding: 2em;
+    > header {
+      padding: 4em;
+      @media screen and (max-width: 640px) {
+        padding: 0.5em;
+      }
+      background: url(../assets/images/background-logos.png);
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-size: contain;
+      background-position: top center;
+      background-repeat: no-repeat;
+      text-align: center;
+      span {
+        padding-top: 1em;
+        color: $fablue;
+      }
+    }
+    > section {
+      text-align: center;
+      margin: 2em 0;
+      &#hero {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: center;
+        figure {
+          text-align: center;
+          @media screen and (max-width: 640px) {
+            margin: 0.5em;
+          }
+          figcaption {
+            padding-top: 1em;
+            font-weight: 600;
+          }
+        }
+        i {
+          padding: 2em;
+          @media screen and (max-width: 640px) {
+            margin: 0;
+          }
+          transition: transform 0.5s ease;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+      &#companies {
+        img {
+          width: 100%;
+          max-width: 400px;
+          vertical-align: top;
+        }
+      }
     }
   }
 }
