@@ -8,7 +8,7 @@ function initializePage() {
     fragment.appendChild(
       (() => {
         let img = document.createElement("img");
-        img.src = `./assets/images/members/${i}.jpg`;
+        img.src = `./images/members/${i}.jpg`;
         return img;
       })()
     );

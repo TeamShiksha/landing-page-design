@@ -12,8 +12,8 @@ body > aside {
   background-clip: content-box;
   user-select: none;
   background: image-set(
-    url("https://frontend.army/assets/images/fa-logo.svg") 2x,
-    url("https://frontend.army/assets/images/fa-logo.svg") 1x
+    url("https://frontend.army/images/fa-logo.svg") 2x,
+    url("https://frontend.army/images/fa-logo.svg") 1x
   );
 }
 
