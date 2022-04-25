@@ -6,14 +6,10 @@ $fablue: #2d4884;
 html,
 body {
   min-height: 100%;
+  background: #50d673;
 }
 
 @import "./generics.scss";
-
-html,
-body {
-  height: 100%;
-}
 
 body {
   font-family: "SF Pro Text", -apple-system, "Source Sans Pro",
@@ -26,9 +22,32 @@ body {
   display: flex;
   > aside {
     width: 4em;
-    background: $fagreen;
+    background: #50d673;
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
     .logo-sm {
       opacity: 50%;
+    }
+    span {
+      background: white;
+      border-radius: 50%;
+      overflow: hidden;
+      width: 4em;
+      height: 4em;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      .fa {
+        font-size: 3em;
+        opacity: 0.8;
+      }
     }
   }
   @media screen and (max-width: 640px) {
@@ -37,10 +56,20 @@ body {
     }
   }
   > main {
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: white;
+    @media screen and (min-width: 500px) {
+      max-height: calc(100% - 1em);
+      overflow: scroll;
+      border-radius: 20px;
+      position: fixed;
+      width: calc(100% - 5em);
+      box-sizing: border-box;
+      left: 4.5em;
+      top: 0.5em;
+    }
     > header {
       padding: 4em;
       @media screen and (max-width: 640px) {
@@ -95,6 +124,19 @@ body {
           width: 100%;
           max-width: 400px;
           vertical-align: top;
+        }
+      }
+      &#members {
+        .mem-container {
+          display: flex;
+          flex-wrap: wrap;
+          max-width: 1000px;
+          justify-content: center;
+          img {
+            border-radius: 50%;
+            padding: 20px;
+            width: 100px;
+          }
         }
       }
     }
