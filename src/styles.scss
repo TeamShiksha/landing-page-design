@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
 //colors
 $fagreen: #50d673;
+$falightgreen: #daf6e3;
 $fablue: #2d4884;
+$fadarkblue: #233252;
 
 html,
 body {
   min-height: 100%;
-  background: #50d673;
+  background: $fagreen;
 }
 
 @import "./generics.scss";
@@ -22,7 +24,7 @@ body {
   display: flex;
   > aside {
     width: 4em;
-    background: #50d673;
+    background: $fagreen;
     position: fixed;
     height: 100%;
     display: flex;
@@ -33,17 +35,19 @@ body {
     align-items: center;
     .logo-sm {
       opacity: 50%;
+      margin-top: 0.5em;
     }
     span {
       background: white;
       border-radius: 50%;
       overflow: hidden;
-      width: 4em;
-      height: 4em;
+      width: 3em;
+      height: 3em;
       display: flex;
       align-content: center;
       justify-content: center;
       flex-wrap: wrap;
+      margin-bottom: 0.5em;
       .fa {
         font-size: 3em;
         opacity: 0.8;
@@ -65,9 +69,9 @@ body {
       overflow: scroll;
       border-radius: 20px;
       position: fixed;
-      width: calc(100% - 5em);
+      width: calc(100% - 4.5em);
       box-sizing: border-box;
-      left: 4.5em;
+      left: 4em;
       top: 0.5em;
     }
     > header {
@@ -136,6 +140,36 @@ body {
             border-radius: 50%;
             padding: 20px;
             width: 100px;
+          }
+        }
+      }
+    }
+    > footer {
+      background: $fadarkblue;
+      color: $falightgreen;
+      padding: 0em 1em;
+      text-align: center;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      div.subtext {
+        width: 100%;
+        background: $fablue;
+        padding: 1em;
+        display: flex;
+        text-transform: capitalize;
+        justify-content: space-around;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          padding: 0.5em 0;
+          text-transform: uppercase;
+          a {
+            color: inherit;
+            text-decoration: none;
           }
         }
       }
