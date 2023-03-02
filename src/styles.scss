@@ -1,19 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
 //colors
 $fagreen: #50d673;
+$falightgreen: #daf6e3;
 $fablue: #2d4884;
+$fadarkblue: #233252;
 
 html,
 body {
   min-height: 100%;
+  background: $fagreen;
 }
 
 @import "./generics.scss";
-
-html,
-body {
-  height: 100%;
-}
 
 body {
   font-family: "SF Pro Text", -apple-system, "Source Sans Pro",
@@ -27,8 +25,33 @@ body {
   > aside {
     width: 4em;
     background: $fagreen;
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
     .logo-sm {
       opacity: 50%;
+      margin-top: 0.5em;
+    }
+    span {
+      background: white;
+      border-radius: 50%;
+      overflow: hidden;
+      width: 3em;
+      height: 3em;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 0.5em;
+      .fa {
+        font-size: 3em;
+        opacity: 0.8;
+      }
     }
   }
   @media screen and (max-width: 640px) {
@@ -37,16 +60,26 @@ body {
     }
   }
   > main {
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: white;
+    @media screen and (min-width: 500px) {
+      max-height: calc(100% - 1em);
+      overflow: scroll;
+      border-radius: 20px;
+      position: fixed;
+      width: calc(100% - 4.5em);
+      box-sizing: border-box;
+      left: 4em;
+      top: 0.5em;
+    }
     > header {
       padding: 4em;
       @media screen and (max-width: 640px) {
         padding: 0.5em;
       }
-      background: url(../assets/images/background-logos.png);
+      background: url(../images/background-logos.png);
       align-self: stretch;
       display: flex;
       flex-direction: column;
@@ -95,6 +128,49 @@ body {
           width: 100%;
           max-width: 400px;
           vertical-align: top;
+        }
+      }
+      &#members {
+        .mem-container {
+          display: flex;
+          flex-wrap: wrap;
+          max-width: 1000px;
+          justify-content: center;
+          img {
+            border-radius: 50%;
+            padding: 20px;
+            width: 100px;
+          }
+        }
+      }
+    }
+    > footer {
+      background: $fadarkblue;
+      color: $falightgreen;
+      padding: 0em 1em;
+      text-align: center;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      div.subtext {
+        width: 100%;
+        background: $fablue;
+        padding: 1em;
+        display: flex;
+        text-transform: capitalize;
+        justify-content: space-around;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          padding: 0.5em 0;
+          text-transform: uppercase;
+          a {
+            color: inherit;
+            text-decoration: none;
+          }
         }
       }
     }
